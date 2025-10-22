@@ -1,0 +1,46 @@
+
+  @media (min-width: 992px) {
+    .container {
+        width: 970px; !important
+    }
+  }
+    
+.logo-text , .logo-image{
+    float: left;
+    max-width: 200px;
+    height: 100%;
+  }
+  .logo-text img{
+    width: 100% !important;
+  }
+
+  .logo-image  img{
+    width: 100% !important;
+  }
+
+  .get-quote-form .form-item input,.get-quote-form .form-item textarea{
+    color: #000;
+    font-weight: 600;
+  }
+  .get-quote-form .form-item textarea{
+    resize: vertical;
+  }
+  .get-quote-form .form-item input::placeholder {
+    color: #F81894;
+  }
+  .get-quote-form .form-item textarea::placeholder {
+    color: #F81894;
+  }
+  
+  .get-quote-form .form-item input::-webkit-input-placeholder {
+    color: #F81894;
+  }
+  
+  .get-quote-form .form-item input:-ms-input-placeholder {
+    color: #F81894;
+  }
+  
+  .get-quote-form .form-item input::-ms-input-placeholder {
+    color: #F81894;
+  }
+  

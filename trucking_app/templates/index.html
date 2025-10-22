@@ -1,0 +1,1226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DANS TRUCKING">
+<meta name="keywords" content="Trans, Aero, Bootstrap, DANS TRUCKING, Template, Logistic, Blog, Transport, Corporate, Cargo, Truck">
+<meta name="author" content="Mr Dan">
+<title>DANS TRUCKING </title>
+<!-- <link rel="shortcut icon" href="img/logo.png">
+<link href="css/master.css" rel="stylesheet">	
+<link rel="stylesheet" href="css/style.css"> -->
+<link rel="shortcut icon" href="{% static 'img/logo.png' %}">
+<link href="{% static 'css/master.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+ <style>
+
+			.container {
+				width: 100%;  /* اجعلها تأخذ عرض كامل الصفحة */
+				max-width: 1200px;  /* اجعل الحد الأقصى للحاوية 1200px (أو أي قيمة أخرى حسب التصميم المطلوب) */
+				margin: 0 auto;  /* لضمان أن الحاوية تكون في المنتصف */
+			}
+    </style>
+</head>
+<body>
+
+	<!-- =========================
+     PRE LOADER       
+	============================== -->
+	
+    <div class="preloader" id="preloader">
+        <div class="cssload-container">
+        	<div class="cssload-whirlpool"></div>
+        </div>
+    </div>
+	
+	<!-- =========================
+     END PRE LOADER       
+	============================== -->
+	
+	
+	<!-- =========================
+		TOP BAR
+	============================== -->
+	<div class="top-bar">
+		<div class="container">
+				
+				<!-- === TOP BAR SOCIAL ICONS === -->
+				
+				<div class="top-bar-social">
+					<a href="#"><div class="my-btn my-btn-primary">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-twitter"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-primary">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-facebook"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-primary">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-google-plus"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-primary">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-pinterest-p"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-primary">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-instagram"></i>
+						</div>
+					</div></a>
+				</div>
+				
+				<!-- === TOP BAR PHONE === -->
+				
+				<div class="top-bar-phone">
+					<div class="top-bar-phone-icon">
+						<i class="fa fa-phone"></i>
+					</div>
+					+900 123 45 67
+				</div>
+				
+				<!-- === TOP BAR E-MAIL === -->
+				
+				<div class="top-bar-mail">
+					<div class="top-bar-mail-icon">
+						<i class="fa fa-envelope"></i>
+					</div>
+					info@domain.com
+				</div>
+			
+		</div>
+	</div>	
+	<!-- =========================
+		END TOP BAR
+	============================== -->
+	
+	<!-- =========================
+		TOP MAIN NAVBAR
+	============================== -->
+	<div class="main-navbar main-navbar-2">
+		<div class="container">
+			<div class="row">
+                 
+				<!-- === TOP LOGO === -->
+				 
+				<div class="logo" id="main-logo">
+					<div class="logo-text">
+						<!-- Trans <span class="color-primary">Aero</span> -->
+						<img src="{% static 'img/logo.jpg' %}" alt="logo">
+					</div>
+				</div>
+				 
+				<!-- === TOP SEARCH === -->
+				 
+				<div class="main-search-input" id="main-search-input">
+					<form>
+						<input type="text" id="main-search" name="main-search" placeholder="Try and type enter..." />
+					</form>
+				</div>
+				 
+				<div class="search-control">
+					<!-- === top search button show === -->
+					<a id="show-search" class="show-search latest" href="#">
+						<div class="my-btn my-btn-grey">
+                            <div class="my-btn-bg-top"></div>
+                            <div class="my-btn-bg-bottom"></div>
+                            <div class="my-btn-text">
+                                <i class="fa fa-search"></i>
+                            </div>
+						</div>
+					</a>
+					<!-- === top search button close === -->
+					<a id="close-search" class="close-search latest" href="#">
+						<div class="my-btn my-btn-grey">
+							<div class="my-btn-bg-top"></div>
+							<div class="my-btn-bg-bottom"></div>
+							<div class="my-btn-text">
+								<i class="fa fa-close"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+				<div class="show-menu-control">
+					<!-- === top search button show === -->
+					<a id="show-menu" class="show-menu" href="#">
+						<div class="my-btn my-btn-primary">
+                            <div class="my-btn-bg-top"></div>
+                            <div class="my-btn-bg-bottom"></div>
+                            <div class="my-btn-text">
+                                <i class="fa fa-bars"></i>
+                            </div>
+						</div>
+					</a>
+				</div>
+				  
+				<!-- === TOP MENU === -->
+								 
+				<div class="collapse navbar-collapse main-menu main-menu-2" id="main-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="{% url 'home' %}">Home</a></li>
+						<li class="main-menu-separator"></li>
+						<li class="dropdown"><a href="{% url 'services' %}">Services</a></li>
+						<li class="main-menu-separator"></li>
+						<li class="dropdown"><a href="{% url 'equipments' %}">Equipments</a></li>
+						<li class="main-menu-separator"></li>
+						<li><a href="{% url 'about' %}">About us</a></li>
+						<li class="main-menu-separator"></li>
+						<li><a href="{% url 'contact' %}">Contacts</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	 
+	 <!-- =========================
+		END TOP MAIN NAVBAR
+	============================== -->
+     
+	 
+	 <!-- =========================
+		MAIN SLIDER
+	============================== -->
+	<div id="main-slider-2" class="main-slider main-slider-2">
+		
+		<!-- === SLIDER BUTTONS === -->
+		
+		<a class="main-slider-2-button-prev" href="#">
+			<div class="my-btn my-btn-grey">
+				<div class="my-btn-bg-top"></div>
+				<div class="my-btn-bg-bottom"></div>
+				<div class="my-btn-text">
+					<i class="fa fa-angle-left"></i>
+				</div>
+			</div>
+		</a>
+		
+		<a class="main-slider-2-button-next" href="#">
+			<div class="my-btn my-btn-grey">
+				<div class="my-btn-bg-top"></div>
+				<div class="my-btn-bg-bottom"></div>
+				<div class="my-btn-text">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</div>
+		</a>
+		
+		<div class="sp-slides">
+			
+			<!-- === SLIDER ITEM 1 === -->	
+			
+			<div class="sp-slide">
+				
+				<!-- === slide overlay === -->	
+				<div class="main-slider-overlay"></div>
+				
+				<!-- === slide image === -->
+				<img class="sp-image" src="{% static 'img/company/truck1.jpg' %}"
+					data-src="{% static 'img/company/truck1.jpg' %}"
+					data-retina="{% static 'img/company/truck1.jpg' %}" alt="" />
+				
+				<!-- === slide container === -->	
+				<div class="container">
+                    <div class="main-slider-content">
+        				<h2 class="sp-layer"
+                            data-position="centerCenter" data-vertical="-55"
+        					data-show-transition="left" data-hide-transition="left" data-show-delay="200" data-hide-delay="200">
+        					We are your reliable partner
+        				</h2>
+        
+        				<h2 class="sp-layer color-primary"
+                            data-position="centerCenter" data-vertical="10"
+        					data-show-transition="left" data-hide-transition="left" data-show-delay="400" data-hide-delay="400">
+        					Quality services of cargo
+        				</h2>
+                         
+                    </div>
+                </div>
+			</div>
+
+            <!-- === SLIDER ITEM 2 === -->	
+			
+			<div class="sp-slide">
+				
+				<!-- === slide overlay === -->	
+				<div class="main-slider-overlay"></div>
+				
+				<!-- === slide image === -->	
+				<img class="sp-image" src="{% static 'img/company/truck2.jpg' %}"
+					data-src="{% static 'img/company/truck2.jpg' %}"
+					data-retina="{% static 'img/company/truck2.jpg' %}" alt="" />
+
+				
+				<!-- === slide container === -->	
+				<div class="container">
+                    <div class="main-slider-content">
+        				<h2 class="sp-layer"
+                            data-position="centerCenter" data-vertical="-55"
+        					data-show-transition="down" data-hide-transition="down" data-show-delay="600" data-hide-delay="600">
+        					We are your reliable partner
+        				</h2>
+        
+        				<h2 class="sp-layer color-primary"
+                            data-position="centerCenter" data-vertical="10"
+        					data-show-transition="down" data-hide-transition="down" data-show-delay="400" data-hide-delay="400">
+        					Quality services of cargo
+        				</h2>
+            
+                       
+                         
+                    </div>
+                </div>
+			</div>
+   
+            <!-- === SLIDER ITEM 3 === -->	
+			
+			<div class="sp-slide">
+				
+				<!-- === slide overlay === -->	
+				<div class="main-slider-overlay"></div>
+				
+				<!-- === slide image === -->	
+                <img class="sp-image" src="{% static 'img/company/truck3.jpg' %}"
+					data-src="{% static 'img/company/truck3.jpg' %}"
+					data-retina="{% static 'img/company/truck3.jpg' %}" alt="" />
+				
+				<!-- === slide container === -->	
+				<div class="container">
+                    <div class="main-slider-content">
+        				<h2 class="sp-layer"
+                            data-position="centerCenter" data-vertical="-55"
+        					data-show-transition="up" data-hide-transition="up" data-show-delay="200" data-hide-delay="200">
+        					We are your reliable partner
+        				</h2>
+        
+        				<h2 class="sp-layer color-primary"
+                            data-position="centerCenter" data-vertical="10"
+        					data-show-transition="up" data-hide-transition="up" data-show-delay="400" data-hide-delay="400">
+        					Quality services of cargo
+        				</h2>
+            
+                       
+                    </div>
+                </div>
+			</div>
+
+			 <!-- === SLIDER ITEM 4 === -->	
+			
+			 <div class="sp-slide">
+				
+				<!-- === slide overlay === -->	
+				<div class="main-slider-overlay"></div>
+				
+				<!-- === slide image === -->	
+                <img class="sp-image" src="{% static 'img/company/truck5.jpg' %}"
+						data-src="{% static 'img/company/truck5.jpg' %}"
+						data-retina="{% static 'img/company/truck5.jpg' %}" alt="" />
+				
+				<!-- === slide container === -->	
+				<div class="container">
+                    <div class="main-slider-content">
+        				<h2 class="sp-layer"
+                            data-position="centerCenter" data-vertical="-55"
+        					data-show-transition="up" data-hide-transition="up" data-show-delay="200" data-hide-delay="200">
+        					We are your reliable partner
+        				</h2>
+        
+        				<h2 class="sp-layer color-primary"
+                            data-position="centerCenter" data-vertical="10"
+        					data-show-transition="up" data-hide-transition="up" data-show-delay="400" data-hide-delay="400">
+        					Quality services of cargo
+        				</h2>
+            
+                       
+                    </div>
+                </div>
+			</div>
+
+		</div>
+    </div>
+	<!-- =========================
+		END MAIN SLIDER
+	============================== -->
+    
+	
+	<!-- =========================
+		SERVICES
+	============================== -->
+    <section class="def-section home-services">
+		<div class="container">
+			<div class="title-group">
+				<h2>Our Services</h2>
+				<div class="subtitle with-square">Best Of The Best</div>
+			</div>
+			<div class="row">
+                 
+				<!-- === SERVICE ITEM1 === -->	
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+				
+					<div class="service">				
+						<div class="service-icon">
+							<i class="flaticon-transport222"></i>
+						</div>
+						<h3> Bulk Commodity Transport</h3>
+						<div class="service-text">
+							<p>Efficient bulk transport for a wide range of commodities like grains and fertilizers, using modern equipment and flexible combinations tailored for heavy payloads.
+							</p>
+						</div>
+						<div class="service-button"> 
+							<a href="{% url 'services' %}">
+								<div class="my-btn my-btn-default">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										MORE
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+                
+				<!-- === SERVICE ITEM2 === -->
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="service-mark">
+				
+					<div class="service-mark-border-top"></div>
+					<div class="service-mark-border-right"></div>
+					<div class="service-mark-border-bottom"></div>
+					<div class="service-mark-border-left"></div>
+					<div class="service">
+						<div class="service-icon">
+							<!-- <img class="flaticon-transport358"></img> -->
+							<img src="{% static 'img/company/road.png' %}" style="width: 80px;" alt="">
+						</div>
+						<h3>Mass Management Accreditation</h3>
+						<div class="service-text">
+							<p>NHVAS Mass Management accredited, ensuring compliance with load limitations and optimal safety during transport operations.							</p>
+						</div>
+						<div class="service-button">
+							<a href="{% url 'services' %}">
+								<div class="my-btn my-btn-default">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										MORE
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+                
+				<!-- === SERVICE ITEM3 === -->
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+				
+					<div class="service">
+						<div class="service-icon">
+							<!-- <i class="flaticon-transport548"></i> -->
+							<img src="{% static 'img/company/car.png' %}" style="width: 80px;" alt="">
+						</div>
+						<h3>Modern Transport Fleet</h3>
+						<div class="service-text">
+							<p>Late-model vehicles equipped with advanced safety and performance features for reliable and professional haulage.</p>
+						</div>
+                        <div class="service-button">
+							<a href="{% url 'services' %}">
+								<div class="my-btn my-btn-default">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										MORE
+									</div>
+								</div>
+							</a>
+						</div>
+                     </div>
+					 
+                 </div>
+                
+				<!-- === SERVICE ITEM4 === -->
+				
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+				
+					<div class="service">
+						<div class="service-icon">
+							<!-- <i class="flaticon-road40"></i> -->
+							<img src="{% static 'img/company/real-time-tracking.png' %}" style="width: 80px;" alt="">
+						</div>
+						<h3>Real-Time <br> GPS Tracking</h3>
+						<div class="service-text">
+							<p>All trucks fitted with GPS tracking to ensure live monitoring, accurate ETAs, and complete load visibility.							</p>
+						</div>
+						<div class="service-button">
+							<a href="{% url 'services' %}">
+								<div class="my-btn my-btn-default">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										MORE
+									</div>
+								</div>
+							</a>
+						</div>
+                     </div>
+					 
+                 </div>
+				 
+             </div>
+         </div>
+     </section>
+	 <!-- =========================
+		END SERVICES
+	============================== -->
+    
+	
+	<!-- ===================================
+		SECTION ABOUT US AND GET QUOTE
+	======================================== -->
+	<section class="def-section about-quote">
+		<div class="section-bg-left"></div>
+		<div class="section-bg-right"></div>
+		<div class="container">
+			<div class="row">
+				
+				<!-- === ABOUT US === -->	
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 home-about">
+						
+						<!-- === TITLE GROUP === -->	
+						<div class="title-group">
+							<h2>ABOUT US</h2>
+							<div class="subtitle with-square"></div>
+						</div>
+						
+						<!-- === ABOUT US TEXT === -->	
+						<p>
+							We have vast knowledge of the transport industry across the eastern seaboard as we as South Australia. 
+
+From humble beginnings we have grown into a well known name in the industry. 
+
+We are best known for our can do attitude and the ability to take on any job and make sure the freight arrives safely and on time.
+						</p>
+						
+						<div class="home-about-video">
+							<!-- === PLAY VIDEO BUTTON === -->	
+							<div class="play-video" id="play-video">
+								<div class="my-btn my-btn-primary">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										<i class="fa fa-play"></i>
+									</div>
+								</div>
+							</div>
+							<!-- === STOP VIDEO BUTTON === -->	
+							<div class="stop-video" id="stop-video">
+								<div class="my-btn my-btn-primary">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										<i class="fa fa-pause"></i>
+									</div>
+								</div>
+							</div>
+							
+							<!-- === VIDEO === -->	
+							<video id="aboutvideo" loop="loop" preload="auto" style="height: 400px;">
+								<source src="{% static 'img/company/truck-video.mp4' %}" style="height:auto;"/>
+								<!-- <source src="{% static 'media/video/trucks.webm' %}" type="video/webm" /> -->
+							</video>
+							
+							<!-- === READ MORE BUTTON === -->	
+							<a href="about.html"><div class="home-about-button">
+								<div class="my-btn my-btn-primary">
+									<div class="my-btn-bg-top"></div>
+									<div class="my-btn-bg-bottom"></div>
+									<div class="my-btn-text">
+										READ
+									</div>
+								</div>
+							</div></a>
+
+						</div>
+				</div>
+				
+				<!-- === GET QUOTE === -->	
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 get-quote">
+						
+						<!-- === TITLE GROUP === -->
+						<div class="title-group">
+							<h2>REQUEST A QUOTE</h2>
+							<div class="subtitle with-square">Specialists will contact you as soon as possible for any inquiries.
+							</div>
+						</div>
+						
+						<!-- === GET QUOTE FORM=== -->
+						<div class="get-quote-form">
+						<div class="send-result"></div>
+				<form method="POST" id="gq-form">
+					{% csrf_token %}
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 get-quote-form-left">
+						<div class="form-item">
+							<input type="text" name="location" id="gq-location" placeholder="LOCATION" value="{{ form.location.value }}" />
+						</div>
+						<div class="form-item">
+							<input type="text" name="person" id="gq-person" placeholder="PERSON/CARGO" value="{{ form.person.value }}" />
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 get-quote-form-right">
+						<div class="form-item">
+							<input type="text" name="destination" id="gq-destination" placeholder="TO DESTINATION" value="{{ form.destination.value }}" />
+						</div>
+						<div class="form-item">
+							<input type="text" name="contact" id="gq-contact" placeholder="E-MAIL OR NUMBER" value="{{ form.contact.value }}" />
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 get-quote-form-bottom">
+						<div class="form-item">
+							<textarea name="message" id="gq-text" placeholder="MESSAGE">{{ form.message.value }}</textarea>
+						</div>
+						<div class="get-quote-form-button">
+							<button type="submit" id="gq-submit"><span class="my-btn my-btn-grey">
+								<span class="my-btn-bg-top"></span>
+								<span class="my-btn-bg-bottom"></span>
+								<span class="my-btn-text">GET A QUOTE</span>
+							</span></button>
+						</div>
+					</div>
+				</form>
+
+						</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	 <!-- ===================================
+		END SECTION ABOUT US AND GET QUOTE
+	======================================== -->
+     
+	 <!-- ===================================
+	    SECTION REVIEWS AND FAQ
+	======================================== -->
+	<section class="def-section">
+		<div class="container">
+			<div class="row">
+				
+				<!-- === REVIEWS === -->
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="home-review">
+						
+						<!-- === TITLE GROUP === -->
+						<div class="title-group">
+							<h2>TESTIMONIALS</h2>
+							<div class="subtitle with-square">INTEGER CONGUE ELIT NON</div>
+						</div>
+						
+						<!-- === OWL CAROUSEL === -->
+						<div class="home-review-carousel owl-carousel owl-theme" id="owl-review">
+							
+							<!-- === OWL CAROUSEL ITEM === -->
+							<div class="home-review-carousel-item">
+								<div class="home-review-carousel-text">
+									<div class="home-review-carousel-quote"><div><i class="fa fa-quote-left"></i></div></div>
+									<p>Praesent vestibulum dapibus nibh. Etiam iaculis nunc ac metus. Ut id nisl quis enim dignissim sagittis.
+									Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit 
+									amet eros.</p>
+								</div>
+								
+								<!-- === OWL CAROUSEL ITEM AUTHOR=== -->
+								<div class="home-review-carousel-people">
+									<div class="home-review-carousel-avatar">
+										<img src="media/avatars/avatar1.png" alt="" />
+									</div>
+									<div class="home-review-carousel-name">
+										RICHARD GEAR
+									</div>
+									<div class="home-review-carousel-company">
+										Happy client
+									</div>
+								</div>
+							</div>
+							
+							<!-- === OWL CAROUSEL ITEM === -->
+							<div class="home-review-carousel-item">
+								<div class="home-review-carousel-text">
+									<div class="home-review-carousel-quote"><div><i class="fa fa-quote-left"></i></div></div>
+									<p>Praesent vestibulum dapibus nibh. Etiam iaculis nunc ac metus. Ut id nisl quis enim dignissim sagittis.
+									Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit 
+									amet eros.</p> 
+								</div>
+								
+								<!-- === OWL CAROUSEL ITEM AUTHOR=== -->
+								<div class="home-review-carousel-people">
+									<div class="home-review-carousel-avatar">
+										<img src="{% static 'media/avatars/avatar1.png' %}" alt="" />
+									</div>
+									<div class="home-review-carousel-name">
+										RICHARD GEAR
+									</div>
+									<div class="home-review-carousel-company">
+										Happy client
+									</div>
+								</div>
+							</div>
+							
+							<!-- === OWL CAROUSEL ITEM === -->
+							<div class="home-review-carousel-item">
+								<div class="home-review-carousel-text">
+									<div class="home-review-carousel-quote"><div><i class="fa fa-quote-left"></i></div></div>
+									<p>Praesent vestibulum dapibus nibh. Etiam iaculis nunc ac metus. Ut id nisl quis enim dignissim sagittis.
+									Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit 
+									amet eros.</p>
+								</div>
+								
+								<!-- === OWL CAROUSEL ITEM AUTHOR=== -->
+								<div class="home-review-carousel-people">
+									<div class="home-review-carousel-avatar">
+										<img src="media/avatars/avatar1.png" alt="" />
+									</div>
+									<div class="home-review-carousel-name">
+										RICHARD GEAR
+									</div>
+									<div class="home-review-carousel-company">
+										Happy client
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- === FAQ === -->
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="home-faq">
+						
+						<!-- === TITLE GROUP === -->
+						<div class="title-group">
+							<h2>WHY CHOSE US</h2>
+							<div class="subtitle with-square">PELENTESQUE INYD URNA</div>
+						</div>
+						
+						<!-- === ACCORDION === -->
+						<div class="panel-group" id="accordion">
+							
+							<!-- === ACCORDION ITEM === -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+											Dui ac hendrerit elementum quam ipsum auctor lorem
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<p>In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. 
+										Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra
+										rhoncus pede.</p>
+									</div>
+								</div>
+							</div>
+							
+							<!-- === ACCORDION ITEM === -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+											Mauris vel magna a est lobortis volutpat
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. 
+										Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra
+										rhoncus pede.</p>
+									</div>
+								</div>
+							</div>
+							
+							<!-- === ACCORDION ITEM === -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+											Sed bibendum ornare lorem mauris feugiat suspendisse neque
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. 
+										Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra
+										rhoncus pede.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</section>
+	 <!-- ===================================
+		END SECTION REVIEWS AND FAQ
+	======================================== -->
+	
+	
+	<!-- ===================================
+		SECTION STATS
+	======================================== -->
+	<div class="def-section stats" id="home-stats" data-stellar-background-ratio="0.4">
+		<div class="stats-overlay"></div>
+		<div class="container">
+			<div class="title-group">
+				<h2 style="color: #F81894;">Let’s work together</h2>
+				<h1 style="color: white;">We generate results for our customers!</h1>
+			</div>
+			<div class="row">
+				
+				<!-- === STATS ITEM === -->
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="stat-item">
+						<div class="stat-item-icon">
+							<i class="flaticon-first33"></i>
+						</div>
+						<div class="stat-item-number" id="num1">
+							450
+						</div>
+						<div class="stat-item-text">
+							PROJECTS<br>DONE
+						</div>
+					</div>
+				</div>
+				
+				<!-- === STATS ITEM === -->
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="stat-item stat-item-mark">
+						<div class="stat-item-icon">
+							<i class="flaticon-shirt16"></i>
+						</div>
+						<div class="stat-item-number" id="num2">
+							150
+						</div>
+						<div class="stat-item-text">
+							CLIENTS<br>HAPPY
+						</div>
+					</div>
+				</div>
+				
+				<!-- === STATS ITEM === -->
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="stat-item">
+						<div class="stat-item-icon">
+							<i class="flaticon-group2"></i>
+						</div>
+						<div class="stat-item-number" id="num3">
+							120
+						</div>
+						<div class="stat-item-text">
+							WORKERS<br>TEAM
+						</div>
+					</div>
+				</div>
+				
+				<!-- === STATS ITEM === -->
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="stat-item">
+						<div class="stat-item-icon">
+							<i class="flaticon-clock96"></i>
+						</div>
+						<div class="stat-item-number" id="num4">
+							14
+						</div>
+						<div class="stat-item-text">
+							YEARS IN<br>MARKET
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- ===================================
+		END SECTION STATS
+	======================================== -->
+    
+	
+     
+	<!-- =========================
+		CONTACTS MAP
+	============================== -->
+    <div class="contact-map" id="contact-map">
+	</div>
+	<!-- =========================
+		END CONTACTS MAP
+	============================== -->
+	 
+	<!-- ===================================
+		SUBSCRIBE SECTION
+	======================================== -->
+	<div class="def-section home-subscribe">
+		<div class="container">
+			<div class="row">
+				
+				<!-- === SUBSCRIBE TEXT === -->
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 home-subscribe-text animated wow fadeInUp" data-wow-duration=".5s" data-wow-offset="100">
+					<span class="home-subscribe-icon"><i class="flaticon-email114"></i></span>
+					SIGN UP FOR NEWSLETTER TO GET UPDATES AND NEWS
+				</div>
+				
+				<!-- === SUBSCRIBE FORM === -->
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 home-subscribe-form animated wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" data-wow-offset="100">
+				<form id="subscribe-form" method="POST">
+					{% csrf_token %}
+					<div class="home-subscribe-form-input">
+						<input type="email" name="email" id="email" placeholder="YOUR E-MAIL" required />
+					</div>
+					<div class="home-subscribe-form-button">
+						<button type="submit">
+							<span class="my-btn my-btn-primary">
+								<span class="my-btn-bg-top"></span>
+								<span class="my-btn-bg-bottom"></span>
+								<span class="my-btn-text">SUBSCRIBE</span>
+							</span>
+						</button>
+					</div>
+				</form>
+				<div id="loader" style="display: none;">Loading...</div>
+				<!-- هنا سيتم عرض رسالة التأكيد أو الخطأ -->
+				<div id="subscribe-message"></div>
+			</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- ===================================
+		END SUBSCRIBE SECTION
+	======================================== -->
+     
+	
+	<!-- ===================================
+		FOOTER
+	======================================== -->
+	<footer class="def-section footer">
+		<div class="container">
+			<div class="row">
+				
+				<!-- === FOOTER COLUMN === -->
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-1">
+					<div class="logo with-border-bottom">
+						<div class="logo-image">
+							<img src="{% static 'img/logo.png' %}" alt="" />
+						</div>
+						<!-- <div class="logo-text">
+							Trans <span class="color-primary">Aero</span>
+						</div> -->
+					</div>
+					<div class="footer-1-text">
+						<p>We have vast knowledge of the transport industry across the eastern seaboard as we as South Australia. From humble beginnings we have grown into a well known name in the industry. We are best known for our can do attitude and the ability to take on any job and make sure the freight arrives safely and on time. </p>
+					</div>
+					<div class="footer-1-button">
+						<a href="{% url 'about' %}"><div class="my-btn my-btn-primary">
+							<div class="my-btn-bg-top"></div>
+							<div class="my-btn-bg-bottom"></div>
+							<div class="my-btn-text">
+								MORE
+							</div>
+						</div></a>
+					</div>
+				</div>
+				
+				<!-- === FOOTER COLUMN === -->
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-2">
+					<h4 class="with-square with-border-bottom">LINKS</h4>
+					<div class="footer-2-links">
+						<div class="footer-2-links-1">
+							<ul>
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="{% url 'services' %}">Services</a></li>
+								<li><a href="{% url 'equipments' %}">Equipments</a></li>
+								<li><a href="{% url 'about' %}">About us</a></li>
+								<li><a href="{% url 'contact' %}">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<!-- === FOOTER COLUMN === -->
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-3">
+					<h4 class="with-square with-border-bottom">ADRESS</h4>
+					<div class="footer-3-phone footer-3-item">
+						<span class="footer-3-icon"><i class="fa fa-phone"></i></span>
+						Phone: +61 400 867 002
+					</div>
+					<div class="footer-3-mail footer-3-item">
+						<span class="footer-3-icon"><i class="fa fa-envelope"></i></span>
+						E-mail: admin@danstrucking.com.au
+					</div>
+					<div class="footer-3-adress footer-3-item">
+						<span class="footer-3-icon"><i class="fa fa-map-marker"></i></span>
+						Address: Wonga Park, 3115, VIC Australia 
+					</div>
+				</div>
+						
+
+			</div>
+		</div>
+	</footer>
+	<!-- ===================================
+		END FOOTER
+	======================================== -->
+
+
+	<!-- ===================================
+		BOTTOM SECTION
+	======================================== -->
+	<div class="bottom">
+		<div class="container">
+			<div class="row">
+				
+				<!-- === BOTTOM LEFT === -->
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bottom-1">
+					COPYRIGHT 2015 | DANS  <span class="color-primary">TRUCKING</span>
+				</div>
+				
+				<!-- === BOTTOM CENTER === -->
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bottom-2">
+					<a href="#"><div class="my-btn my-btn-grey">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-twitter"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-grey">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-facebook"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-grey">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-google-plus"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-grey">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-pinterest-p"></i>
+						</div>
+					</div></a>
+					<a href="#"><div class="my-btn my-btn-grey">
+						<div class="my-btn-bg-top"></div>
+						<div class="my-btn-bg-bottom"></div>
+						<div class="my-btn-text">
+							<i class="fa fa-instagram"></i>
+						</div>
+					</div></a>
+				</div>
+				
+				<!-- === BOTTOM RIGHT === -->
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bottom-3">
+					MADE BY 
+					<a target="_blank" href="https://www.linkedin.com/in/omar-m-227b10253/">
+						Omar <span class="color-primary">Mohammed</span>
+					</a>&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+					<a target="_blank" href="https://www.linkedin.com/in/amro-batish01">
+						Amro <span class="color-primary">Batish</span>
+					</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- ===================================
+		END BOTTOM SECTION
+	======================================== -->
+	
+	
+	<!-- =========================
+	   SLIDE MENU
+	============================== -->
+		<aside id="slide-menu" class="slide-menu">
+			
+			<!-- === CLOSE MENU BUTTON === -->	
+			<div class="close-menu" id="close-menu">
+				<i class="fa fa-close"></i>
+			</div>
+			
+			<!-- === SLIDE MENU === -->	
+			<ul id="left-menu" class="left-menu">
+				
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'home' %}">Home</a>
+				</li>
+				
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'services' %}">Service</a>
+				</li>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'equipments' %}">Equipments</a>
+				</li>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'about' %}">About us</a>
+				</li>
+				
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'contact' %}">Contacts</a>
+				</li>
+				
+			</ul>
+			
+		</aside>
+	<!-- =========================
+	   END SLIDE MENU
+	============================== -->
+
+	
+	<!-- =========================
+	   BLACK OVERLAY
+	============================== -->
+	<div class="black-overlay" id="black-overlay"></div>
+	<!-- =========================
+	   END BLACK OVERLAY
+	============================== -->
+     
+	<!-- =========================
+		 SCRIPTS   
+	============================== -->	
+
+<!-- JQUERY -->
+<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+
+<!-- BOOTSTRAP -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- SMOOTH SCROLLING  -->
+<script src="{% static 'js/smoothscroll.min.js' %}"></script>
+
+<!-- STELLAR.JS FOR PARALLAX -->
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+<!-- SLIDER PRO  -->
+<script src="{% static 'assets/slider-pro/js/jquery.sliderPro.min.js' %}"></script>
+
+<!-- SCROLLSPY -->
+<script src="{% static 'js/scrollspy.min.js' %}"></script>
+
+<!-- WOW PLAGIN -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+
+<!-- CAROUSEL -->
+<script src="{% static 'assets/owl-carousel/owl.carousel.min.js' %}"></script>
+
+<!-- VERTICAL ACCORDEON MENU -->
+<script src="{% static 'js/metisMenu.min.js' %}"></script>
+
+<!-- CUSTOM SCRIPT -->
+<script src="{% static 'js/theme.min.js' %}"></script>
+
+	<!-- GOOGLE MAPS API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHDFaUVFTKqrrUtBXubJbrUxKKq-t8Fw&amp;callback=initMap"></script>
+
+	<!-- CUSTOM SCRIPT -->
+	<!-- <script src="js/theme.min.js"></script> -->
+
+
+	<script>
+document.getElementById('gq-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // لمنع الإرسال العادي للفورم
+
+    var form = new FormData(this);
+    
+    fetch("{% url 'get_quote' %}", {
+        method: 'POST',
+        body: form,
+        headers: {
+            'X-CSRFToken': form.get('csrfmiddlewaretoken')  // إضافة CSRF Token للتأكد من الأمان
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Your quote request has been submitted successfully!");
+            document.getElementById('gq-form').reset();  // إعادة تعيين الفورم بعد الإرسال
+        } else {
+            alert("Error: " + data.errors);  // عرض الأخطاء إذا كانت موجودة
+        }
+    })
+    .catch(error => console.error("Error:", error));
+});
+
+// الاشتراك في النشرة الإخبارية
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // لمنع الإرسال العادي للفورم
+
+    // إظهار اللودر أثناء الانتظار
+    document.getElementById('loader').style.display = 'block';
+
+    var form = new FormData(this);
+
+    fetch("{% url 'subscribe' %}", {  // قم بتوجيه الطلب إلى الـ view الخاص بك
+        method: 'POST',
+        body: form,
+        headers: {
+            'X-CSRFToken': form.get('csrfmiddlewaretoken')  // إضافة CSRF Token للتأكد من الأمان
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // إخفاء اللودر بعد الرد
+        document.getElementById('loader').style.display = 'none';
+
+        var messageDiv = document.getElementById('subscribe-message');
+        if (data.success) {
+            // عرض رسالة نجاح
+            messageDiv.innerHTML = '<div class="alert alert-success">' + data.message + '</div>';
+        } else {
+            // عرض رسالة خطأ
+            messageDiv.innerHTML = '<div class="alert alert-danger">Error: ' + data.errors + '</div>';
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        // إخفاء اللودر في حالة حدوث خطأ
+        document.getElementById('loader').style.display = 'none';
+    });
+});
+</script>
+</body>
+</html>

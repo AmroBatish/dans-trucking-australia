@@ -1,0 +1,57 @@
+/* 
+  @media (min-width: 992px) {
+    .container {
+        width: 970px; !important
+    }
+  } */
+    
+.logo-text , .logo-image{
+    float: left;
+    max-width: 200px;
+    height: 100%;
+  }
+  .logo-text img{
+    width: 100% !important;
+  }
+
+  .logo-image  img{
+    width: 100% !important;
+  }
+
+  .get-quote-form .form-item input,.get-quote-form .form-item textarea{
+    color: #000;
+    font-weight: 600;
+  }
+  .get-quote-form .form-item textarea{
+    resize: vertical;
+  }
+  .get-quote-form .form-item input::placeholder {
+    color: #F81894;
+  }
+  .get-quote-form .form-item textarea::placeholder {
+    color: #F81894;
+  }
+  
+  .get-quote-form .form-item input::-webkit-input-placeholder {
+    color: #F81894;
+  }
+  
+  .get-quote-form .form-item input:-ms-input-placeholder {
+    color: #F81894;
+  }
+  
+  .get-quote-form .form-item input::-ms-input-placeholder {
+    color: #F81894;
+  }
+  .main-navbar.main-navbar-1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('.main-navbar-1');  /* ضع هنا رابط الصورة الجديدة */
+    background-size: cover;   /* تغطي الخلفية بالكامل */
+    background-position: center;  /* لضبط الصورة في المنتصف */
+    z-index: -1; /* تأكد من أن الصورة تظهر خلف العناصر الأخرى */
+}
