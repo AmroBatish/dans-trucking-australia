@@ -305,8 +305,9 @@ width: 100%;
      <div class="page-header" style="background-image: url('/static/media/truck3.jpg');">
   <div class="page-header-overlay"></div>
   <div class="container">
-    <h1>Our Services</h1>
-    <p>HOME / SERVICES</p>
+    <h1>Our Equipments</h1>
+    <p><a href="{% url 'home' %}">Home</a> / 
+		<a href="{% url 'services' %}">Equipments</a></p>
   </div>
 </div>
 
@@ -362,7 +363,7 @@ width: 100%;
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-1">
 					<div class="logo with-border-bottom">
 						<div class="logo-image">
-							<img src="{% static 'img/logo.png' %}" alt="" />
+							<img src="{% static 'img/logo.png' %}" alt="logo.png" style="width: 200px;"/>
 						</div>
 						<!-- <div class="logo-text">
 							Trans <span class="color-primary">Aero</span>

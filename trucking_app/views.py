@@ -1,7 +1,10 @@
 from django.shortcuts import render , get_object_or_404
 from django.http import JsonResponse
 from .models import Service , Equipment
-from .forms import QuoteRequestForm , NewsletterSubscription
+from .forms import QuoteRequestForm, NewsletterSubscriptionForm
+from django.core.mail import send_mail
+from django.conf import settings
+from .models import Service, Equipment, NewsletterSubscription
 
 
 def home(request):
@@ -80,12 +83,30 @@ def get_quote(request):
     return JsonResponse({'success': False, 'message': 'Invalid request.'})
 
 
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.conf import settings
+from .models import NewsletterSubscription
+
 def subscribe(request):
     if request.method == 'POST':
-        form = NewsletterSubscription(request.POST)
+        form = NewsletterSubscriptionForm(request.POST)
         if form.is_valid():
-            form.save()
-            return JsonResponse({'success': True, 'message': 'You have successfully subscribed to the newsletter!'})
+            subscription = form.save()
+
+            # إرسال إيميل تأكيد الاشتراك
+            send_mail(
+                subject='Newsletter Subscription Confirmation',
+                message='Thank you for subscribing to our newsletter! You will now receive updates and news from us.',
+                from_email=settings.DEFAULT_FROM_EMAIL,  # تأكد من ضبطها في settings.py
+                recipient_list=[subscription.email],
+                fail_silently=False,
+            )
+
+            return JsonResponse({
+                'success': True,
+                'message': '✅ You have successfully subscribed! A confirmation email has been sent.'
+            })
         else:
             return JsonResponse({'success': False, 'errors': form.errors})
     return JsonResponse({'success': False, 'message': 'Invalid request.'})

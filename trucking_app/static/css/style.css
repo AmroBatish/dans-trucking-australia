@@ -43,7 +43,60 @@
   .get-quote-form .form-item input::-ms-input-placeholder {
     color: #F81894;
   }
-  .main-navbar.main-navbar-1::before {
+  .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.newsletter-input {
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.home-subscribe {
+  background-color: #212529;
+  padding: 40px 0;
+}
+
+.home-subscribe-text {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.home-subscribe-text i {
+  font-size: 24px;
+}
+
+.home-subscribe-text span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.main-navbar.main-navbar-1::before {
     content: "";
     position: absolute;
     top: 0;
