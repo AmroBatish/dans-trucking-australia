@@ -2,14 +2,15 @@ from django.db import models
 
 
 class Client(models.Model):
-    name = models.CharField(max_length=100)
+    full_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
+    address = models.TextField(blank=True, null=True)  # عنوان العميل
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.full_name
 
    
 
@@ -51,3 +52,27 @@ class NewsletterSubscription(models.Model):
 
     def __str__(self):
         return self.email
+
+class QuoteRequest(models.Model):
+    location = models.CharField(max_length=200) 
+    person = models.CharField(max_length=200) 
+    destination = models.CharField(max_length=200)  
+    contact = models.CharField(max_length=200)  
+    message = models.TextField()  
+    created_at = models.DateTimeField(auto_now_add=True)  
+
+   
+    status = models.CharField(
+        max_length=50,
+        choices=[  
+            ('new', 'new'),
+            ('under_review', 'under review'),
+            ('responded', 'responded'),
+            ('completed', 'completed'),
+        ],
+        default='new'
+    )
+    internal_notes = models.TextField(null=True, blank=True)  
+
+    def __str__(self):
+        return f"{self.person} ({self.contact}) - {self.status} - {self.created_at.strftime('%Y-%m-%d %H:%M:%S')}"

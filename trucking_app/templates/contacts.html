@@ -16,6 +16,8 @@
       FAV AND TOUCH ICONS  
 ============================== -->
 <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+<link rel="shortcut icon" href="{% static 'img/logo.png' %}">
+
 
 <!-- =========================
      STYLESHEETS   
@@ -78,7 +80,15 @@ width: 100%;
   text-transform: uppercase;
   color: #ccc;
 }
-
+			.home-subscribe-form-input input[type=email] {
+				background-color: #fff;
+				padding: 15px 20px;
+				font-size: 10px;
+				margin-top: 1px;
+				width: 100%;
+				border: none;
+				height: 44px;
+			}
 </style>
 </head>
 <body>
@@ -107,35 +117,8 @@ width: 100%;
 				<!-- === TOP BAR SOCIAL ICONS === -->
 				
 				<div class="top-bar-social">
-					<a href="#"><div class="my-btn my-btn-primary">
-						<div class="my-btn-bg-top"></div>
-						<div class="my-btn-bg-bottom"></div>
-						<div class="my-btn-text">
-							<i class="fa fa-twitter"></i>
-						</div>
-					</div></a>
-					<a href="#"><div class="my-btn my-btn-primary">
-						<div class="my-btn-bg-top"></div>
-						<div class="my-btn-bg-bottom"></div>
-						<div class="my-btn-text">
-							<i class="fa fa-facebook"></i>
-						</div>
-					</div></a>
-					<a href="#"><div class="my-btn my-btn-primary">
-						<div class="my-btn-bg-top"></div>
-						<div class="my-btn-bg-bottom"></div>
-						<div class="my-btn-text">
-							<i class="fa fa-google-plus"></i>
-						</div>
-					</div></a>
-					<a href="#"><div class="my-btn my-btn-primary">
-						<div class="my-btn-bg-top"></div>
-						<div class="my-btn-bg-bottom"></div>
-						<div class="my-btn-text">
-							<i class="fa fa-pinterest-p"></i>
-						</div>
-					</div></a>
-					<a href="#"><div class="my-btn my-btn-primary">
+				
+					<a href="https://www.instagram.com/dans_trucking_aus/#"><div class="my-btn my-btn-primary">
 						<div class="my-btn-bg-top"></div>
 						<div class="my-btn-bg-bottom"></div>
 						<div class="my-btn-text">
@@ -150,7 +133,7 @@ width: 100%;
 					<div class="top-bar-phone-icon">
 						<i class="fa fa-phone"></i>
 					</div>
-					+900 123 45 67
+					+61 400 867 002
 				</div>
 				
 				<!-- === TOP BAR E-MAIL === -->
@@ -159,7 +142,7 @@ width: 100%;
 					<div class="top-bar-mail-icon">
 						<i class="fa fa-envelope"></i>
 					</div>
-					info@domain.com
+					admin@danstrucking.com.au
 				</div>
 			
 		</div>
@@ -299,21 +282,22 @@ width: 100%;
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 					<div class="contacts-form row">
 						<div class="send-result"></div>
-						<form name="contact-form" id="contact-form" method="POST" action="javascript:void(null);" onsubmit="sendmail_2();">
+						<form name="contact-form" id="contact-form" method="POST" action="{% url 'contact_view' %}">
+							{% csrf_token %}
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contacts-form-item">
-								<input type="text" name="contact-name" placeholder="Full Name" />
+								<input type="text" name="full_name" placeholder="Full Name" required />
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contacts-form-item">
-								<input type="text" name="contact-email" placeholder="Email" />
+								<input type="text" name="email" placeholder="Email" request />
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contacts-form-item">
-								<input type="text" name="contact-phone" placeholder="Phone" />
+								<input type="text" name="phone" placeholder="Phone" required />
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contacts-form-item">
-								<input type="text" name="contact-site" placeholder="Website" />
+								<input type="text" name="address" placeholder="Address" required />
 							</div>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contacts-form-item">
-								<textarea name="contact-message" placeholder="How can we help?"></textarea>
+								<textarea name="message" placeholder="How can we help?"></textarea>
 							</div>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contacts-form-item contacts-form-button">
 								<button><span class="my-btn my-btn-grey">
@@ -323,6 +307,7 @@ width: 100%;
 										SEND MESSAGE
 									</span>
 								</span></button>
+								<!-- <div class="send-result"></div> -->
 							</div>
 						</form>
 					</div>
@@ -411,12 +396,15 @@ width: 100%;
 				
 				<!-- === SUBSCRIBE FORM === -->
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 home-subscribe-form animated wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" data-wow-offset="100">
-					<form>
+					<form id="subscribe-form" method="POST" class="d-flex">
+						{% csrf_token %}
 						<div class="home-subscribe-form-input">
-							<input type="text" name="subscribe" placeholder="YOUR E-MAIL" />
+							<input type="email" name="email" id="email"
+                 placeholder="Enter your email..."
+                 class="form-control me-2" required />
 						</div>
 						<div class="home-subscribe-form-button">
-							<button><span class="my-btn my-btn-primary">
+							<button type="submit"><span class="my-btn my-btn-primary">
 								<span class="my-btn-bg-top"></span>
 								<span class="my-btn-bg-bottom"></span>
 								<span class="my-btn-text">
@@ -433,8 +421,7 @@ width: 100%;
 	<!-- ===================================
 		END SUBSCRIBE SECTION
 	======================================== -->
-     
-	
+    
 	<!-- ===================================
 		FOOTER
 	======================================== -->
@@ -443,21 +430,20 @@ width: 100%;
 			<div class="row">
 				
 				<!-- === FOOTER COLUMN === -->
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-1">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-1">
 					<div class="logo with-border-bottom">
 						<div class="logo-image">
 							<img src="{% static 'img/logo.png' %}" alt="" style="width: 200px;" />
 						</div>
-						<div class="logo-text">
+						<!-- <div class="logo-text">
 							Trans <span class="color-primary">Aero</span>
-						</div>
+						</div> -->
 					</div>
 					<div class="footer-1-text">
-						<p>Praesent vestibulum dapibus nibh. Etiam iaculis nunc ac metus. Ut id nisl quis enim dignissim sagittis. 
-						Etiam sollicitudin, ipsum pulvinar rutrum,tellus ipsum. laoreet </p>
+						<p>We have vast knowledge of the transport industry across the eastern seaboard as we as South Australia. From humble beginnings we have grown into a well known name in the industry. We are best known for our can do attitude and the ability to take on any job and make sure the freight arrives safely and on time. </p>
 					</div>
 					<div class="footer-1-button">
-						<a href="06_about.html"><div class="my-btn my-btn-primary">
+						<a href="{% url 'about' %}"><div class="my-btn my-btn-primary">
 							<div class="my-btn-bg-top"></div>
 							<div class="my-btn-bg-bottom"></div>
 							<div class="my-btn-text">
@@ -468,57 +454,38 @@ width: 100%;
 				</div>
 				
 				<!-- === FOOTER COLUMN === -->
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-2">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-2">
 					<h4 class="with-square with-border-bottom">LINKS</h4>
 					<div class="footer-2-links">
 						<div class="footer-2-links-1">
 							<ul>
-								<li><a href="">Home</a></li>
-								<li><a href="">Service</a></li>
-								<li><a href="">About us</a></li>
-								<li><a href="">Testimonial</a></li>
-								<li><a href="">Blog</a></li>
-								<li><a href="">Clients</a></li>
-							</ul>
-						</div>
-						<div class="footer-2-links-2">
-							<ul>
-								<li><a href="">Contact</a></li>
-								<li><a href="">Quote</a></li>
-								<li><a href="">Policy</a></li>
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="{% url 'services' %}">Services</a></li>
+								<li><a href="{% url 'equipments' %}">Equipments</a></li>
+								<li><a href="{% url 'about' %}">About us</a></li>
+								<li><a href="{% url 'contact' %}">Contact Us</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				
 				<!-- === FOOTER COLUMN === -->
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-3">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-3">
 					<h4 class="with-square with-border-bottom">ADRESS</h4>
 					<div class="footer-3-phone footer-3-item">
 						<span class="footer-3-icon"><i class="fa fa-phone"></i></span>
-						Telephone:  + 390 12 345 6789
-					</div>
-					<div class="footer-3-fax footer-3-item">
-						<span class="footer-3-icon"><i class="fa fa-fax"></i></span>
-						Fax/phone:  + 390 12 345 6789
+						Phone: +61 400 867 002
 					</div>
 					<div class="footer-3-mail footer-3-item">
 						<span class="footer-3-icon"><i class="fa fa-envelope"></i></span>
-						E-mail:  sale@transaero.com
+						E-mail: admin@danstrucking.com.au
 					</div>
 					<div class="footer-3-adress footer-3-item">
 						<span class="footer-3-icon"><i class="fa fa-map-marker"></i></span>
-						Adress: Transaero ltd. inc.  USA Jones McLean Drive , Los Angeles, California VA 22108 
+						Address: Wonga Park, 3115, VIC Australia 
 					</div>
 				</div>
-				
-				<!-- === FOOTER COLUMN === -->
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 footer-4">
-					<h4 class="with-square with-border-bottom">INSTAGRAM FEED</h4>
-					<div class="footer-4-widget">
-						<iframe src="http://widget.websta.me/in/tag:truck/?s=76&amp;w=3&amp;h=2&amp;b=0&amp;p=13"></iframe> <!-- websta - web.stagram.com -->
-					</div>
-				</div>
+						
 
 			</div>
 		</div>
@@ -537,7 +504,7 @@ width: 100%;
 				
 				<!-- === BOTTOM LEFT === -->
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bottom-1">
-					COPYRIGHT 2015 | TRANS <span class="color-primary">AERO</span>
+					COPYRIGHT 2015 | DANS  <span class="color-primary">TRUCKING</span>
 				</div>
 				
 				<!-- === BOTTOM CENTER === -->
@@ -581,8 +548,13 @@ width: 100%;
 				
 				<!-- === BOTTOM RIGHT === -->
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bottom-3">
-					<a href="#">TERM OF USE</a> | 
-					MADE BY <a href="#">TRANS <span class="color-primary">AERO</span></a>
+					MADE BY 
+					<a target="_blank" href="https://www.linkedin.com/in/omar-m-227b10253/">
+						Omar <span class="color-primary">Mohammed</span>
+					</a>&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+					<a target="_blank" href="https://www.linkedin.com/in/amro-batish01">
+						Amro <span class="color-primary">Batish</span>
+					</a>
 				</div>
 				
 			</div>
@@ -596,80 +568,46 @@ width: 100%;
 	<!-- =========================
 	   SLIDE MENU
 	============================== -->
-	<aside id="slide-menu" class="slide-menu">
-		
-		<!-- === CLOSE MENU BUTON === -->	
-		<div class="close-menu" id="close-menu">
-			<i class="fa fa-close"></i>
-		</div>
-		
-		<!-- === SLIDE MENU === -->	
-		<ul id="left-menu" class="left-menu">
+		<aside id="slide-menu" class="slide-menu">
 			
-			<!-- === SLIDE MENU ITEM === -->	
-			<li> 
-				<a href="#">Home <i class="fa fa-plus arrow"></i></a>
+			<!-- === CLOSE MENU BUTTON === -->	
+			<div class="close-menu" id="close-menu">
+				<i class="fa fa-close"></i>
+			</div>
+			
+			<!-- === SLIDE MENU === -->	
+			<ul id="left-menu" class="left-menu">
 				
-				<!-- === slide menu child === -->	
-				<ul class="slide-menu-child">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="02_home.html">Home 2</a></li>
-				</ul>
-			</li>
-			
-			<!-- === SLIDE MENU ITEM === -->	
-			<li> 
-				<a href="#">Service <i class="fa fa-plus arrow"></i></a>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'home' %}">Home</a>
+				</li>
 				
-				<!-- === slide menu child === -->	
-				<ul class="slide-menu-child">
-					<li><a href="03_services.html">Service 1</a></li>
-					<li><a href="04_services.html">Service 2</a></li>
-					<li><a href="05_service_detail.html">Service Details</a></li>
-				</ul>
-			</li>
-			
-			<!-- === SLIDE MENU ITEM === -->	
-			<li> 
-				<a href="06_about.html">About us</a>
-			</li>
-			
-			<!-- === SLIDE MENU ITEM === -->	
-			<li> 
-				<a href="#">Elements <i class="fa fa-plus arrow"></i></a>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'services' %}">Service</a>
+				</li>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'equipments' %}">Equipments</a>
+				</li>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'about' %}">About us</a>
+				</li>
 				
-				<!-- === slide menu child === -->	
-				<ul class="slide-menu-child">
-					<li><a href="07_typography.html">Typography</a></li>
-					<li><a href="08_buttons.html">Buttons</a></li>
-					<li><a href="09_progress.html">Progress Bars</a></li>
-					<li><a href="10_alerts.html">Alerts</a></li>
-				</ul>
-			</li>
-			
-			<!-- === SLIDE MENU ITEM === -->	
-			<li>
-				<a href="#">Blog <i class="fa fa-plus arrow"></i></a>
+				<!-- === SLIDE MENU ITEM === -->	
+				<li> 
+					<a href="{% url 'contact' %}">Contacts</a>
+				</li>
 				
-				<!-- === slide menu child === -->	
-				<ul class="slide-menu-child">
-					<li><a href="11_blog.html">Blog items</a></li>
-					<li><a href="12_blog_detail.html">Single Post</a></li>
-				</ul>
-			</li>
+			</ul>
 			
-			<!-- === SLIDE MENU ITEM === -->	
-			<li>
-				<a href="13_contacts.html">Contacts</a>
-			</li>
-			
-		</ul>
-		
-	</aside>
+		</aside>
 	<!-- =========================
 	   END SLIDE MENU
 	============================== -->
-	
+
 	
 	<!-- =========================
 	   BLACK OVERLAY
@@ -715,6 +653,50 @@ width: 100%;
 	
 	<!-- GOOGLE MAPS API -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHDFaUVFTKqrrUtBXubJbrUxKKq-t8Fw&amp;callback=initMap" async defer></script>
-	
+<script>
+    $(document).ready(function() {
+        // When the form is submitted
+        $('#contact-form').on('submit', function(e) {
+            e.preventDefault();  // Prevent page reload
+
+            var formData = $(this).serialize();  // Serialize form data
+
+            // Send the data using AJAX
+            $.ajax({
+                url: "{% url 'contact_view' %}",  // URL for the view
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    // On success: show success message
+                    $('.send-result').html('<div class="alert alert-success">Your message has been sent successfully! Thank you for contacting us.</div>');
+                    $('#contact-form')[0].reset();  // Reset the form after submission
+                },
+                error: function(xhr, errmsg, err) {
+                    // On error: display error messages
+                    var errorMessage = 'There was an error sending your message. Please check the fields and try again.';
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;  // Display the custom message sent from the server
+                    }
+
+                    // Show field-specific errors (if any)
+                    if (xhr.responseJSON && xhr.responseJSON.errors) {
+                        var errors = xhr.responseJSON.errors;
+                        $.each(errors, function(field, error) {
+                            // Highlight the specific field with an error
+                            $('[name="'+field+'"]').addClass('is-invalid');
+                            $('[name="'+field+'"]').next('.invalid-feedback').text(error);
+                        });
+                    }
+
+                    $('.send-result').html('<div class="alert alert-danger">' + errorMessage + '</div>');
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
 </body>
 </html>

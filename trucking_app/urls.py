@@ -16,6 +16,9 @@ urlpatterns = [
     path("services/<int:id>/", views.service_detail, name="service_detail"),
     path('get-quote/', views.get_quote, name='get_quote'),
     path("subscribe/", views.subscribe, name="subscribe"),
+    path('request-quote/', views.request_quote_view, name='request_quote'),
+    path('contact/', views.contact_view, name='contact_view'),  # إضافة URL للـ contact view
+    
 ]
 
 if settings.DEBUG:

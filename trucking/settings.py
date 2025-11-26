@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,28 +21,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wp#8j%rm0q)-6y7dag)$$gs=p92+g^7&trza-a6-*7*85&fo27'
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key-change-me')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() == 'true'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your_email@gmail.com'
-EMAIL_HOST_PASSWORD = 'your_password'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your_email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your_password'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
     'trucking_app',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,6 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+JAZZMIN_SETTINGS = {
+    "site_title": "Trucking Admin",
+    "site_header": "Dans Trucking",
+    "site_brand": "Dans Trucking",
+
+    "site_logo": "img/logo.png",  
+    "site_icon": "img/logo.png",  
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,17 +96,16 @@ WSGI_APPLICATION = 'trucking.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabasetru',
-        'USER': 'root',
-        'PASSWORD': 'amro123',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': os.environ.get('DB_NAME', 'mydatabasetru'),
+        'USER': os.environ.get('DB_USER', 'root'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),  # ما نكتبش الباسورد الحقيقي هنا
+        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
         'OPTIONS': {
             'charset': 'utf8mb4',
         },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -143,3 +151,38 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email configuration
+# Read email settings from environment variables so we can send real SMTP
+# emails in development or production without committing secrets.
+# Priority: explicit EMAIL_BACKEND env var -> when DEBUG default to console backend -> otherwise SMTP
+# Default to SMTP backend (so real emails are sent). You can still override
+# by setting the EMAIL_BACKEND environment variable to the console backend
+# for local development if you prefer.
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+
+# SMTP defaults (can be overridden by env vars)
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True').lower() in ('1', 'true', 'yes')
+
+# Credentials: default to the Gmail account values you were using before.
+# You can override these with environment variables (recommended).
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+# If you used an app password, set it here or as the env var EMAIL_HOST_PASSWORD.
+# Note: app passwords are typically 16 characters without spaces.
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
+
+# Notes for the developer:
+# - To test real SMTP locally, set the following environment variables in PowerShell:
+#   $env:EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#   $env:EMAIL_HOST = 'smtp.gmail.com'
+#   $env:EMAIL_PORT = '587'
+#   $env:EMAIL_USE_TLS = 'True'
+#   $env:EMAIL_HOST_USER = 'your@gmail.com'
+#   $env:EMAIL_HOST_PASSWORD = 'your_app_password'
+#   $env:DEFAULT_FROM_EMAIL = 'your@gmail.com'
+# - For Gmail, create an App Password (if your account uses 2FA) and use that as
+#   EMAIL_HOST_PASSWORD (no spaces). For quick testing without SMTP, keep the
+#   console backend (default when DEBUG=True).
