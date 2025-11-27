@@ -46,10 +46,17 @@ Once the form is submitted, a specialist will contact the user to provide furthe
     ```
 
 ## Technologies Used
-- **Django**: Web framework used to build the website.
-- **Bootstrap**: Front-end framework for responsive design.
-- **HTML, CSS, JavaScript**: Core technologies used to build the pages.
+Django – Backend framework
 
+Jazzmin – Custom admin UI
+
+Bootstrap – Responsive frontend styling
+
+HTML, CSS, JavaScript – Core frontend
+
+Whitenoise – Static file handling
+
+MySQL or SQLite – Database support
 ## Contact Information
 For any inquiries or issues related to the website or services, you can reach out through the following:
 - **Email**: admin@danstrucking.com.au
